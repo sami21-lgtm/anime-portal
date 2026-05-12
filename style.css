@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.slider-container {
+    text-align: center;
+    width: 100%;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hint-text {
+    margin-top: 25px;
+    color: #888;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* --- Slider Box --- */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    background: #141414;
+    padding: 30px 0;
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Smooth fading edges */
+.slider::before, .slider::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+    pointer-events: none;
+}
+.slider::before { left: 0; top: 0; background: linear-gradient(to right, #0d0d0d, transparent); }
+.slider::after { right: 0; top: 0; background: linear-gradient(to left, #0d0d0d, transparent); }
+
+/* Sliding Track */
+.slider-track {
+    display: flex;
+    width: max-content;
+    gap: 25px;
+    animation: infiniteScroll 25s linear infinite;
+}
+
+/* Photo Card Design */
+.slide-card {
+    width: 220px;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+    border: 2px solid #222;
+}
+
+.slide-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Interaction Effects */
+.slider:hover .slider-track {
+    animation-play-state: paused; /* Hover korle auto scroll rest nibe */
+}
+
+.slide-card:hover {
+    transform: scale(1.08) translateY(-10px);
+    border-color: #00bcd4; /* Accent glowing color pointer */
+    box-shadow: 0 15px 30px rgba(0, 188, 212, 0.3);
+}
+
+@keyframes infiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Exact midpoint dynamic loop */
+}
