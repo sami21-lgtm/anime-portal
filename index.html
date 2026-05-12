@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Intro Infinite Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="slider-container">
+        <h2>Infinity Scroll Animation with Voice Intro</h2>
+        
+        <div class="slider">
+            <div class="slider-track" id="sliderTrack">
+                
+                <div class="slide-card" data-voice="audio/intro1.mp3">
+                    <img src="images/pic1.jpg" alt="Your Photo 1">
+                </div>
+                
+                <div class="slide-card" data-voice="audio/intro2.mp3">
+                    <img src="images/pic2.jpg" alt="Your Photo 2">
+                </div>
+                
+                <div class="slide-card" data-voice="audio/intro3.mp3">
+                    <img src="images/pic3.jpg" alt="Your Photo 3">
+                </div>
+
+                <div class="slide-card" data-voice="audio/intro4.mp3">
+                    <img src="images/pic4.jpg" alt="Your Photo 4">
+                </div>
+
+                <div class="slide-card" data-voice="audio/intro5.mp3">
+                    <mp3 src="images/pic5.jpg" alt="Your Photo 5">
+                </div>
+
+            </div>
+        </div>
+        <p class="hint-text">Hover over any card to hear the voice intro!</p>
+    </div>
+
+    <audio id="voicePlayer" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
